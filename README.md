@@ -55,6 +55,11 @@ void CImageOperation::AdjustBrightness(cv::Mat& src, cv::Mat& dst)
     cv::LUT(src, cv::Mat(GradationBase, GradationMax, CV_8U, grad),  dst);
 }
 ```
+### 実行例
+入力画像  
+![入力画像](/実行例/閾値処理/0041_cropped.jpg)
+出力画像  
+![出力画像](/実行例/閾値処理/0041_thresholded.jpg)
 
 ## 見開き裁断
 中心から縱に分割する。右綴じか左綴じかで格納順を変える。
@@ -73,17 +78,12 @@ void CImageOperation::CutImagesVertically(const cv::Mat& img,  std::vector<cv::M
     }
 }
 ```
-### 実行例
-入力画像  
-![入力画像](/実行例/閾値処理/0041_cropped.jpg)
-出力画像  
-![出力画像](/実行例/閾値処理/0041_thresholded.jpg)
-
 ## 二色化
 
 THRESH_BINARYを使う。裏地の透けた頁が不気味になるので、大津の方法は使わずに固定値にした方がよい。
 
 ## 外枠領域の裁ち落とし
+先に述べた通り、最初に行う処理だが一番難しい。
 
 ### 切り出し処理
 
