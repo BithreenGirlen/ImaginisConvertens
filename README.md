@@ -73,12 +73,17 @@ void CImageOperation::CutImagesVertically(const cv::Mat& img,  std::vector<cv::M
     }
 }
 ```
+### 実行例
+入力画像  
+![入力画像](/実行例/閾値処理/0041_cropped.jpg)
+出力画像  
+![出力画像](/実行例/閾値処理/0041_thresholded.jpg)
 
 ## 二色化
 
 THRESH_BINARYを使う。裏地の透けた頁が不気味になるので、大津の方法は使わずに固定値にした方がよい。
 
-## 裁ち落とし
+## 外枠領域の裁ち落とし
 
 ### 切り出し処理
 
@@ -256,6 +261,15 @@ void CImageOperation::FitAgainstCentreLine(cv::Mat& src, cv::Mat& dst)
 
 }
 ```
+
+### 実行例
+
+入力画像  
+![入力画像](/実行例/切り落とし/0041.jpg)
+検出画像  
+![検出画像](/実行例/切り落とし/0041_rectangle.jpg)
+切り出し画像  
+![切り出し画像](/実行例/切り落とし/0041_cropped.jpg)
 
 ## 手動切り出し
 大体はうまくいくが、それでも前小口を含んでしまうことがある。
